@@ -1,16 +1,10 @@
+#April 22, 2019
+
 use_synth :piano
 
 def p(note,sleep_time)
   play note, release: 3
   sleep sleep_time
-end
-
-#There's supposed to be a function that
-#does this but it didn't work?
-def play_pattern_sleep(noteList,sleep_time)
-  for x in noteList
-    p x, sleep_time
-  end
 end
 
 def right_hand
@@ -36,9 +30,6 @@ def right_hand
       end
     end
   end
-  
-  
-  
   
   def left_hand
     play :g3,sustain: 2 #55
@@ -74,12 +65,13 @@ def right_hand
   #Bach or Petzold Minuet in G
   
   def minuet
-    in_thread do
-      right_hand
+    with_fx :reverb do
+      in_thread do
+        right_hand
+      end
+      
+      left_hand
     end
-    
-    left_hand
-    
   end
   
   minuet
