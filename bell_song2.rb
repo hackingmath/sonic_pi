@@ -1,0 +1,10 @@
+play 63
+play 79
+sleep 0.5
+play 67
+play 79
+sleep 0.25
+play 80
+sleep 0.25
+play 58
+play 82
